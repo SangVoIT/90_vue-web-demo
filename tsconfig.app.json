@@ -1,12 +1,38 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
-  "exclude": ["src/**/__tests__/*"],
+  "include": ["env.d.ts", "src/**/*","src/**/*.vue"],
+  "exclude": [
+    "src/**/__tests__/*", 
+    "node_modules",
+    "public/**/*",
+    "dist/**",
+    "deploy-prd.sh"
+  ],
   "compilerOptions": {
-    "composite": true,
+    "outDir": "dist/demoWeb",
+    "module": "es2022", //  "commonjs",
+    "target": "es6",
+    "noImplicitAny": true,
+    "allowJs": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "moduleResolution": "Node",
+    "lib": ["dom", "es2022", "esnext"],
+    "types": ["node", "vite/client"]
   }
-}
+} 
+
+// {
+//   "extends": "@vue/tsconfig/tsconfig.dom.json",
+//   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+//   "exclude": ["src/**/__tests__/*"],
+//   "compilerOptions": {
+//     "allowJs": true,
+//     "composite": true,
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["./src/*"]
+//     }
+//   }
+// }
