@@ -23,7 +23,6 @@ const getProductData = async () => {
 
 const deleteProduct = async (productId: number) => {
   try {
-    console.log("deleteProduct: " + productId)
     const result = await productStore.deleteProduct(productId)
     msg.value = "Delete product successfully!"
 
